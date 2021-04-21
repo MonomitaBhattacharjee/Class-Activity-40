@@ -47,6 +47,7 @@ class Game {
     form.hide();
    
     Player.getPlayerInfo();
+    player.getCarsAtEnd();
 
     if(allPlayers !== undefined){
 
@@ -60,7 +61,7 @@ class Game {
           index = index+1;
       x = x+200;
       y = displayHeight-allPlayers[plr].distance
-
+ 
       cars[index-1].x = x
       cars[index-1].y = y
 
@@ -83,12 +84,22 @@ class Game {
 
     if(player.distance>3860){
       gameState = 2;
+      player.rank+=1;
+     
+      Player.updateCarsAtEnd(player.rank);
     }
 
     drawSprites();
+    if(player.rank===1){
+      console.log(player.name);
+      textSize(100);
+      text(player.name + "has won",displayWidth/2,cars[index-1].y);
+    }
   }
   end(){
-    console.log("game ended");
+   // console.log(player.rank);
+   // console.log("game ended");
+  //s form.show();
   }
 }
 

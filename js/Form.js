@@ -7,14 +7,19 @@ class Form {
     this.greeting = createElement('h2');
     this.title = createElement('h2');
     this.reset = createButton("reset");
+    this.playerRank = createElement("h2");
   }
   hide(){
     this.greeting.hide();
     this.button.hide();
     this.input.hide();
     this.title.hide();
+    
   }
-
+show(){
+  this.playerRank.show();
+  this.playerRank.html("You Won");
+}
   display(){
    
     this.title.html("Car Racing Game");
@@ -24,7 +29,8 @@ class Form {
     this.button.position(displayWidth/2+30, displayHeight/2);
 
     this.reset.position(displayWidth-100,20);
-
+this.playerRank.position(displayWidth/2-50,0);
+this.playerRank.hide();
     this.button.mousePressed(()=>{
 
       this.input.hide();
