@@ -1,5 +1,4 @@
 var canvas, backgroundImage;
-
 var gameState = 0;
 var playerCount;
 
